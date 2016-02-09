@@ -1,7 +1,6 @@
 import React, {PropTypes, Component } from 'react';
 import Item from "Item";
 import Input from "Input";
-
 export default class List extends Component {
 
     static propTypes = {
