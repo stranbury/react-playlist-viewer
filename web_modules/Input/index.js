@@ -1,5 +1,4 @@
 import React, {PropTypes, Component} from "react";
-
 export default class Input extends Component {
 
     static propTypes = {
@@ -32,7 +31,7 @@ export default class Input extends Component {
         if( typeof onChange=="function" ){
             onChange(event.target.value)
         }
-        
+
     };
 
     componentWillReceiveProps(nextProps){

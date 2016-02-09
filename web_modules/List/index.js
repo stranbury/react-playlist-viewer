@@ -1,6 +1,7 @@
 import React, {PropTypes, Component } from 'react';
 import Item from "Item";
 import Input from "Input";
+import debounce from 'lodash.debounce';
 export default class List extends Component {
 
     static propTypes = {
@@ -20,7 +21,7 @@ export default class List extends Component {
 
     onChangeHandler = (value) => {
     //  this.setState({inputValue: value})
-      this.props.onInputChange(value);
+      debounce(this.props.onInputChange(value), 2000)
     };
 
     render() {
