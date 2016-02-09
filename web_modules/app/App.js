@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import List from "List";
-import config from "const"
+import consts from "./consts";
 // const artists = [
 //   {name:"Bob Marley"},
 //   {name:"Bob Dylan"},
@@ -31,17 +31,18 @@ export default class App extends Component {
     this.fetchArtist("bob");
 
   }
-  fetchArtist(name){
-    fetch(const.api.endpoints.get( name,"artist")).then((data)=>{
+  fetchArtist = (name) =>{
+    fetch(consts.api.endpoints.getSearch( name,"artist")).then((data)=>{
       data.json().then((keke)=>{
         this.setState({artists: keke.artists.items});
       })
     });
-  }
+  };
+
   render() {
     return (
       <div>
-        <List title="Artist" items={this.state.artists} />
+        <List title="Artist" items={this.state.artists} onInputChange={this.fetchArtist} />
         <List title="Kind" items={kindsArray} />
       </div>
     )

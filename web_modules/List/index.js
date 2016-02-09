@@ -6,6 +6,7 @@ export default class List extends Component {
     static propTypes = {
         title: PropTypes.string,
         items: PropTypes.array,
+        onInputChange: PropTypes.func
     };
 
     static defaultProps = {
@@ -18,7 +19,8 @@ export default class List extends Component {
     };
 
     onChangeHandler = (value) => {
-      this.setState({inputValue: value})
+    //  this.setState({inputValue: value})
+      this.props.onInputChange(value);
     };
 
     render() {

@@ -22,6 +22,9 @@ module.exports = {
       compressor: {
         warnings: false
       }
+    }),
+    new webpack.ProvidePlugin({
+      fetch: "exports?self.fetch!whatwg-fetch"
     })
   ],
   module: {

@@ -4,7 +4,7 @@ export default {
   api: {
     endpoints: {
       getSearch:(query, artist)=>{
-      return apiPath+`/search?query=${query}&offset=0&limit=20&type=${artist}`
+      return apiPath+`search?query=${query}&offset=0&limit=20&type=${artist}`
       }
     }
   }
